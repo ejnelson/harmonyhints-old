@@ -1,7 +1,6 @@
-import React from 'react'
+import React from "react";
+import HomePage from "/HomePage.js";
 
-const Root = () => (
-  <div>Hello React Hot Loader!</div>
-)
+const Root = () => <HomePage />;
 
-export default Root
+export default Root;
