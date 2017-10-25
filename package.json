@@ -1,5 +1,5 @@
 {
-  "name": "react-hot-loader-minimal-boilerplate",
+  "name": "harmonyhints",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wkwiatek/react-hot-loader-minimal-boilerplate.git"
+    "url": "git+https://github.com/ejnelson/harmonyhints.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Erik Nelson",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/wkwiatek/react-hot-loader-minimal-boilerplate/issues"
+    "url": "https://harmonyhints.firebaseapp.com/"
   },
-  "homepage": "https://github.com/wkwiatek/react-hot-loader-minimal-boilerplate#readme",
+  "homepage": "https://harmonyhints.firebaseapp.com/",
   "dependencies": {
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
@@ -29,7 +29,7 @@
     "babel-polyfill": "^6.23.0",
     "babel-preset-latest": "^6.22.0",
     "babel-preset-react": "^6.23.0",
-    "eslint": "https://registry.npmjs.org/eslint/-/eslint-4.6.1.tgz",
+    "eslint": "^4.9.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",

@@ -9,7 +9,6 @@
     "max-len": ["error", { "code": 80, "ignoreTrailingComments": true }],
     "strict": [0],
     "no-use-before-define": [2, "nofunc"],
-    "no-else-return": [0],
     "no-shadow": 0,
     "prefer-const": 0,
     "quote-props": [1, "consistent-as-needed"],
