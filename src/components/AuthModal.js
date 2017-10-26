@@ -1,46 +1,56 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import * as firebase from 'firebase';
 import firebaseui from 'firebaseui';
-
-// FirebaseUI config.
-let uiConfig = {
-  signInSuccessUrl: '<url-to-redirect-to-on-success>',
-  signInOptions: [
-    // Leave the lines as is for the providers you want to offer your users.
-    // firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-    // firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-    // firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-    // firebase.auth.GithubAuthProvider.PROVIDER_ID,
-    // firebase.auth.EmailAuthProvider.PROVIDER_ID,
-    firebase.auth.PhoneAuthProvider.PROVIDER_ID
-  ],
-  // Terms of service url.
-  tosUrl: '<your-tos-url>'
-};
 
 export default class AuthModal extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      value: ''
-    };
+    this.state = {};
   }
   componentDidMount() {
-    // Initialize the FirebaseUI Widget using Firebase.
-    let ui = new firebaseui.auth.AuthUI(firebase.auth());
     // The start method will wait until the DOM is loaded.
-    ui.start('#firebaseui-auth-container', uiConfig);
+    this.props.startAuthUI();
   }
-  handleChange(event) {
-    this.setState({ value: event.target.value });
+  componentDidUpdate() {
+    console.log('update');
   }
-
-  handleSubmit(event) {
-    alert(`An essay was submitted: ${this.state.value}`);
-    event.preventDefault();
-  }
-
   render() {
-    return <div id='firebaseui-auth-container'>hey</div>;
+    // The gray background
+    const backdropStyle = {
+      position: 'fixed',
+      top: 0,
+      bottom: 0,
+      left: 0,
+      right: 0,
+      backgroundColor: 'rgba(0,0,0,0.3)',
+      padding: 50,
+      zIndex: 1.5
+    };
+    const authContainer = {
+      zIndex: 5
+    };
+
+    return (
+      <div>
+        <div
+          onClick={() => {
+            this.props.closeAuthModal();
+            this.props.resetAuthUI();
+          }}
+          style={backdropStyle}
+          id='backdrop'
+        />
+        <div id='authContainer' style={authContainer}>
+          <div id='firebaseui-auth-container' />
+        </div>
+      </div>
+    );
   }
 }
+
+AuthModal.propTypes = {
+  startAuthUI: PropTypes.func.isRequired,
+  resetAuthUI: PropTypes.func.isRequired,
+  closeAuthModal: PropTypes.func.isRequired
+};

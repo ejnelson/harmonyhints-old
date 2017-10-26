@@ -1,15 +1,15 @@
 {
   "presets": [
     [
-      "latest", {
+      "latest",
+      {
         "es2015": {
           "modules": false
         }
       }
     ],
-    "react"
+    "react",
+    "babel-preset-stage-0"
   ],
-  "plugins": [
-    "react-hot-loader/babel"
-  ]
+  "plugins": ["react-hot-loader/babel"]
 }
